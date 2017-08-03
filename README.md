@@ -1,5 +1,5 @@
 # Bullet-NASM-code
-a derivation and update of Bullet MASM code by conversion to NASM
+A derivation and update of Bullet-MASM-code by conversion to NASM. The program now works although it is still very generic. There will be more updates soon to make the gameplay more interesting. Aug 1st, 2017.
 
 Compiles with commands:
 
@@ -11,4 +11,3 @@ Runs with:
 
    dosbox ./barrel.com -exit
    
-   The score keeping function needs more work but it almost completely works now.
