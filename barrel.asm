@@ -110,7 +110,7 @@ BULLET:
 		cmp word [bullet_fired], 1
 		je bulletfired
 		jmp exitbullet
- 									;writes a block into memory
+ 									
 bulletfired:
 
 		sub word [bullet_x], 2	;subtract from bullet position
@@ -120,11 +120,11 @@ bulletfired:
 						
 		mov cx, word [bullet_y];the bullet is drawn here at ( bullet_x, bullet_y)
 		mov ch, cl	 
-		mov dx, word [bullet_x] 
+		mov dx, word [bullet_x] ;bullet position ( x, y) put into dx after bit-twiddling with ch and cl registers
 		mov cl, dl
 		mov dx, cx      
 		add dl, 4
-		mov bh, 10110000b  		
+		mov bh, 10110000b  	;draw bullet here	
 		mov al, 0    
 		mov ah, 6  
 		int 10h
