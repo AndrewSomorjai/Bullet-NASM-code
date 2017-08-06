@@ -45,7 +45,7 @@ GUN:
 		shr al, 1
 		mov byte [mouse_y], al
 		mov ch, al
-		mov cl, byte [mouse_x]        ; x at 70 of 80	  
+		mov cl, byte [mouse_x]        ; mouse_x at 70 of 80	  
 		mov dx, cx      
 		add dl, 5	
 		mov ah, 6
@@ -155,7 +155,7 @@ BULLET_AND_RANDOM_TARGET_COLLISION:
 		je exit_bullet_and_random_target_collision		
 	
 		mov ax, word [bullet_x]
-		cmp al, 14          ;if target_y y and bullet_x are equal and bullet_x is less than 10
+		cmp al, 14          ;if target_y y and bullet_x are equal and bullet_x is less than 14
 		jle compare_y_positions
 ;else     
 		jmp exit_bullet_and_random_target_collision
@@ -201,7 +201,8 @@ createtarget:
 		call GET_RANDOM_Y_POSITION
 		mov al, byte [random_y_position]
 		mov byte [previous_random_y_position], al 
-						   ;This sets the y coordinate and the previous_random_y_position for the instance of the object, almost like OOP.
+						   ;This sets the y coordinate and the previous_random_y_position 
+						   ;for the instance of the object, almost like OOP.
 		mov byte [target_y], al
 		
 drawtarget:				      
